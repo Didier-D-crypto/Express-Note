@@ -26,6 +26,19 @@
 // ==============================================================================
 const express = require("express");
 var path = require("path");
+const port= 8080; 
+const server=http.createServer(function(req,res){
+    res.write('Hello')
+    res.end()
+
+})
+server.listen(port, function(error){
+    if (error){
+        console.log('Went Wrong', error)
+    } else{
+        console.log('server is listening on port' + port )
+    }
+})
 //Node.js: HTTP Server Handling GET and POST Request
 //At POST Request: Grab form data and display them
 
@@ -36,7 +49,7 @@ var path = require("path");
 // Tells node that we are creating an "express" server
 // Sets an initial port. We"ll use this later in our listener
 var app = express();
-var PORT = process.env.PORT || 443; //443 because of HTTPS
+var PORT = process.env.PORT || 8080; //443 because of HTTPS
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
